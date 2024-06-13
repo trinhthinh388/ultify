@@ -4,7 +4,7 @@
  *
  * @class
  */
-export class Stack<T extends unknown = any> {
+export class Stack<T> {
   #array: T[] = [];
 
   /**
@@ -21,7 +21,7 @@ export class Stack<T extends unknown = any> {
    * @param {array} [elements]
    * @return {Stack}
    */
-  static fromArray<T extends unknown = any>(arr: T[]) {
+  static fromArray<T>(arr: T[]) {
     return new Stack<T>(...arr);
   }
 

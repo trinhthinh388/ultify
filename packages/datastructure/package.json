@@ -4,6 +4,7 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "type": "module",
   "sideEffects": false,
   "description": "A Typescript/Javascript implementation of datastructures.",
   "keywords": [
@@ -18,6 +19,7 @@
   ],
   "scripts": {
     "build": "vite --config ../../vite.config.ts build",
+    "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
