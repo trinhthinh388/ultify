@@ -1,0 +1,10 @@
+import '../styles/global.scss';
+import { App } from '../components/app';
+
+export default function AppPage({ Component, pageProps }) {
+  return (
+    <App>
+      <Component {...pageProps} />
+    </App>
+  );
+}

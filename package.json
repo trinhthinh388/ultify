@@ -31,7 +31,8 @@
     "vite-plugin-dts": "^3.9.1"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "docs"
   ],
   "config": {
     "commitizen": {
