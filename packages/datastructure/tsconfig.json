@@ -1,0 +1,5 @@
+{
+  "extends": "@ultify/typescript-config/lib.json",
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
