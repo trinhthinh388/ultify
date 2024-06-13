@@ -5,12 +5,11 @@ permissions:
   contents: write
 
 on:
-  push:
-    paths:
-      - '.changeset/**'
-      - 'packages/**'
-    branches:
-      - master
+  workflow_run:
+    workflows: ['lint']
+    branches: release
+    types:
+      - completed
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
