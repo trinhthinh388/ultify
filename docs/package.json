@@ -10,6 +10,7 @@
     "clean": "rimraf .turbo && rimraf node_modules && rimraf .next"
   },
   "dependencies": {
+    "@hugeicons/react-pro": "^0.3.2",
     "classnames": "^2.5.1",
     "next": "^14.0.4",
     "nextra": "^2.13.2",

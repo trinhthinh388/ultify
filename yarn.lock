@@ -626,6 +626,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hugeicons/react-pro@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "@hugeicons/react-pro@npm:0.3.2"
+  dependencies:
+    js-base64: "npm:^3.7.7"
+    js-md5: "npm:^0.8.3"
+  peerDependencies:
+    react: ">=16.0.0"
+  checksum: 10c0/fff40f17f7ded2fdcb330b9b4318a6abb364af677e98247f87f297e48daa6ab29ecb965f0219c40051ea42bf676c36586cd49d4fa6a3d23fb3fdeaf44835be6b
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/module-importer@npm:^1.0.1":
   version: 1.0.1
   resolution: "@humanwhocodes/module-importer@npm:1.0.1"
@@ -3366,6 +3378,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "docs@workspace:docs"
   dependencies:
+    "@hugeicons/react-pro": "npm:^0.3.2"
     "@types/react": "npm:^18.2.46"
     "@types/react-dom": "npm:^18.2.18"
     "@ultify/eslint-config": "npm:*"
@@ -5452,6 +5465,20 @@ __metadata:
   version: 1.4.0
   resolution: "jju@npm:1.4.0"
   checksum: 10c0/f3f444557e4364cfc06b1abf8331bf3778b26c0c8552ca54429bc0092652172fdea26cbffe33e1017b303d5aa506f7ede8571857400efe459cb7439180e2acad
+  languageName: node
+  linkType: hard
+
+"js-base64@npm:^3.7.7":
+  version: 3.7.7
+  resolution: "js-base64@npm:3.7.7"
+  checksum: 10c0/3c905a7e78b601e4751b5e710edd0d6d045ce2d23eb84c9df03515371e1b291edc72808dc91e081cb9855aef6758292a2407006f4608ec3705373dd8baf2f80f
+  languageName: node
+  linkType: hard
+
+"js-md5@npm:^0.8.3":
+  version: 0.8.3
+  resolution: "js-md5@npm:0.8.3"
+  checksum: 10c0/f7e41e95f8e5eb5eeb43085bec3832ae3dfe0020c42fcca5a4efe571213391a9e9594db31bd34624b7280af4f1f12c751b6a50074a15346ecf40a0d54115d77f
   languageName: node
   linkType: hard
 
