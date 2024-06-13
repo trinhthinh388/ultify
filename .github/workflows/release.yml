@@ -5,13 +5,15 @@ permissions:
   contents: write
 
 on:
-  workflow_run:
-    workflows: ['test']
-    branches: release
-    types:
-      - completed
+  push:
+    paths:
+      - '.changeset/**'
+      - 'packages/**'
+    branches:
+      - master
 
-concurrency: ${{ github.workflow }}-${{ github.ref }}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   release:
@@ -32,13 +34,17 @@ jobs:
           node-version: 18.17.x
 
       - name: 📥 Download deps
-        run: yarn install --frozen-lockfile
+        run: |
+          corepack enable
+          yarn install --frozen-lockfile
 
       - name: Create Release Pull Request or Publish to Npm
         id: changesets
         uses: changesets/action@v1
         with:
           publish: yarn release
+          commit: 'ci(changesets): version packages'
+          setupGitUser: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
