@@ -1,0 +1,35 @@
+{
+  "name": "@ultify/datastructure",
+  "version": "0.0.0",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "description": "A Typescript/Javascript implementation of datastructures.",
+  "keywords": [
+    "typescript",
+    "javascript",
+    "algorithm",
+    "datastructure"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "vite --config ../../vite.config.ts build",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@ultify/eslint-config": "*",
+    "@ultify/typescript-config": "*",
+    "typescript": "^5.4.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "import": "./dist/index.js",
+    "require": "./dist/index.cjs"
+  }
+}
