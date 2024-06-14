@@ -54,6 +54,7 @@ jobs:
   Deploy-Docs:
     runs-on: ubuntu-latest
     needs: [Release]
+    environment: Release
     steps:
       - uses: actions/checkout@v2
       - name: Install Vercel CLI
