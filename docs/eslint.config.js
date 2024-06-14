@@ -1,4 +1,4 @@
-import ultifyEslintConfig from '@ultify/eslint-config'
+import ultifyEslintConfig from '@ultify/eslint-config/next'
 
 export default [
   ...ultifyEslintConfig,

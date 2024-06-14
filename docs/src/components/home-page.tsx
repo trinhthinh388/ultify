@@ -1,20 +1,23 @@
 import { ReactNode } from 'react';
 import { MaxWidthWrapper } from './max-width-wrapper';
 import { StackIcon } from './icons/stack';
+import { FunctionIcon } from './icons/function';
+import Link from 'next/link';
 
 export const SectionCard = ({
   icon,
   title,
+  href
 }: {
   icon: ReactNode;
   title: string;
+  href: string
 }) => {
   return (
-    <div>
-      <div>
-        <div>{icon}</div>
-        <p>{title}</p>
-      </div>
+    <div className='relative flex gap-4 items-center shadow-card transition-shadow duration-300 px-7 py-6 rounded-2xl dark:shadow-cardDark dark:bg-[#202020] hover:shadow-cardHover dark:hover:shadow-cardHoverDark'>
+      <div>{icon}</div>
+      <p className='font-bold text-2xl'>{title}</p>
+      <Link className='absolute w-full h-full top-0 left-0' href={href} />
     </div>
   );
 };
@@ -39,8 +42,10 @@ export const HomePage = () => {
         </p>
       </div>
 
-      <div className="grid gap-4">
-        <SectionCard icon={<StackIcon />} title="Datastructure" />
+      <div className="flex flex-col gap-4 max-w-xl mx-auto w-full mb-40">
+        <SectionCard href='/datastructures' icon={<StackIcon color='currentColor' />} title="Data structures" />
+
+        <SectionCard href='/functions' icon={<FunctionIcon color='currentColor' />} title="Functions" />
       </div>
     </MaxWidthWrapper>
   );
