@@ -2,11 +2,27 @@
 title: Stack
 ---
 
+import { Callout } from 'nextra/components';
+import { Playground } from '@components/playground';
+import { files as constructorFiles } from '@snippets/datastructures/stack/constructor';
+import { files as fromArray } from '@snippets/datastructures/stack/fromArray';
+import { files as toArrayFiles } from '@snippets/datastructures/stack/toArray';
+import { files as pushFiles } from '@snippets/datastructures/stack/push';
+import { files as popFiles } from '@snippets/datastructures/stack/pop';
+import { files as peekFiles } from '@snippets/datastructures/stack/peek';
+import { files as clearFiles } from '@snippets/datastructures/stack/clear';
+import { files as sizeFiles } from '@snippets/datastructures/stack/size';
+
 # Stack
 
 A Stack is a linear data structure that follows a particular order in which the operations are performed.
 The order may be **LIFO(Last In First Out)** or **FILO(First In Last Out)**.
 **LIFO** implies that the element that is inserted last, comes out first and **FILO** implies that the element that is inserted first, comes out last.
+
+<Callout type="info">
+  Ultify's **stack** is a wrapper around Javascript array push/pop with a
+  standard stack interface.
+</Callout>
 
 ## Operations
 
@@ -15,3 +31,42 @@ The order may be **LIFO(Last In First Out)** or **FILO(First In Last Out)**.
 - **Peek**: Returns the top element without removing it.
 - **Clear**: Empty the stack.
 - **IsEmpty**: Checks if the stack is empty.
+- **toArray**: Convert stack to an array.
+
+## APIs
+
+### Constructor
+
+<Playground files={constructorFiles} />
+
+### fromArray `(static)`
+
+<Playground files={fromArray} />
+
+### toArray
+
+<Playground files={toArrayFiles} />
+
+### Push
+
+<Playground files={pushFiles} />
+
+### Pop
+
+<Playground files={popFiles} />
+
+### Peak
+
+<Playground files={peekFiles} />
+
+### Clear
+
+<Playground files={clearFiles} />
+
+### isEmpty
+
+<Playground files={clearFiles} />
+
+### size `(readonly)`
+
+<Playground files={sizeFiles} />
