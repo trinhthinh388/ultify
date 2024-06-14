@@ -2,11 +2,12 @@
   "name": "docs",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "build": "next build",
     "start": "next start ",
     "dev": "next dev -p 3002",
-    "lint": "next lint",
+    "lint": "eslint .",
     "clean": "rimraf .turbo && rimraf node_modules && rimraf .next"
   },
   "dependencies": {

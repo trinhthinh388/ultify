@@ -5,7 +5,7 @@ export const Playground = ({
   files,
   className,
 }: {
-  files: Record<string, any>;
+  files: Record<string, string>;
   className?: string;
 }) => {
   return (
