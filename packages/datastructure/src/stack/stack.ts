@@ -57,6 +57,13 @@ export class Stack<T> {
   }
 
   /**
+   * Returns the top element without removing it
+   */
+  peek() {
+    return this.#array.at(-1)
+  }
+
+  /**
    * Clear stack
    */
   clear() {

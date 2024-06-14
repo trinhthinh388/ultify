@@ -1,5 +1,11 @@
 # @ultify/datastructure
 
+## 0.2.1
+
+### Patch Changes
+
+- added `peek` to stack's api
+
 ## 0.2.0
 
 ### Minor Changes

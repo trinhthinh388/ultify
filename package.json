@@ -16,7 +16,7 @@
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "changeset": "changeset",
-    "version": "changeset version",
+    "versionp": "changeset version",
     "release": "yarn build && changeset publish"
   },
   "devDependencies": {
@@ -31,11 +31,15 @@
     "vite-plugin-dts": "^3.9.1"
   },
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "docs"
   ],
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-emoji"
     }
+  },
+  "resolutions": {
+    "@codesandbox/sandpack-client": "2.10.0"
   }
 }

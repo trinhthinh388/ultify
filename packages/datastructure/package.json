@@ -1,6 +1,6 @@
 {
   "name": "@ultify/datastructure",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -19,6 +19,7 @@
   ],
   "scripts": {
     "build": "vite --config ../../vite.config.ts build",
+    "dev": "vite --watch --config ../../vite.config.ts build",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },
