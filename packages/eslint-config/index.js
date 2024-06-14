@@ -15,19 +15,5 @@ export default tseslint.config(
         tsconfigRootDir: import.meta.dirname,
       },
     },
-  }
+  },
 );
-// export default {
-//   env: {
-//     node: true,
-//   },
-//   parser: "@typescript-eslint/parser",
-//   plugins: ["@typescript-eslint"],
-//   parserOptions: {
-//     sourceType: "module",
-//     ecmaVersion: 2020,
-//   },
-//   rules: {
-//     "@typescript-eslint/no-non-null-assertion": "off",
-//   },
-// };
