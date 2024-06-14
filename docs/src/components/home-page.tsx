@@ -43,9 +43,9 @@ export const HomePage = () => {
       </div>
 
       <div className="flex flex-col gap-4 max-w-xl mx-auto w-full mb-40">
-        <SectionCard href='/datastructures' icon={<StackIcon color='currentColor' />} title="Data structures" />
+        <SectionCard href='/docs/datastructures' icon={<StackIcon color='currentColor' />} title="Data structures" />
 
-        <SectionCard href='/functions' icon={<FunctionIcon color='currentColor' />} title="Functions" />
+        <SectionCard href='/docs/functions' icon={<FunctionIcon color='currentColor' />} title="Functions" />
       </div>
     </MaxWidthWrapper>
   );
