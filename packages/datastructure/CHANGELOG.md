@@ -1,5 +1,12 @@
 # @ultify/datastructure
 
+## 0.2.2
+
+### Patch Changes
+
+- - Added unit tests.
+  - Updated Queue operations. (peek, clear)
+
 ## 0.2.1
 
 ### Patch Changes

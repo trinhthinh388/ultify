@@ -26,6 +26,13 @@ export class Queue<T> {
   }
 
   /**
+   * Convert stack to array
+   */
+  toArray() {
+    return [...this.#array];
+  }
+
+  /**
    * Queue's size
    * @readonly
    */
@@ -54,6 +61,13 @@ export class Queue<T> {
    */
   dequeue() {
     return this.#array.shift();
+  }
+
+  /**
+   * Returns the top element without removing it
+   */
+  peek() {
+    return this.#array[0]
   }
 
   /**

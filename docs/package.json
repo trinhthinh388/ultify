@@ -1,7 +1,7 @@
 {
   "name": "docs",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "build": "next build",
     "start": "next start ",
@@ -12,7 +12,7 @@
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.14.2",
     "@hugeicons/react-pro": "^0.3.2",
-    "@ultify/datastructure": "0.2.1",
+    "@ultify/datastructure": "0.2.2",
     "classnames": "^2.5.1",
     "next": "^14.0.4",
     "next-mdx-remote": "^5.0.0",
