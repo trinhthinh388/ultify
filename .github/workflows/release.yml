@@ -15,10 +15,10 @@ on:
       - 'packages/**'
       - 'docs/**'
     branches:
-      - main
+      - master
   workflow_run:
     workflows: ['lint']
-    branches: release
+    branches: master
     types:
       - completed
 
