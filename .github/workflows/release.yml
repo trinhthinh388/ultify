@@ -17,7 +17,7 @@ on:
     branches:
       - master
   workflow_run:
-    workflows: ['lint']
+    workflows: ['lint', 'test']
     branches: master
     types:
       - completed

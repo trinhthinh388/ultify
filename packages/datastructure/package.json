@@ -5,15 +5,17 @@
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
+  "license": "MIT",
   "sideEffects": false,
+  "repository": "git@github.com:trinhthinh388/ultify.git",
   "description": "A Typescript/Javascript implementation of datastructures.",
+  "author": "Thinh Trinh Duc <thinh.duc.trinh@gmail.com>",
   "keywords": [
     "typescript",
     "javascript",
     "algorithm",
     "datastructure"
   ],
-  "license": "MIT",
   "files": [
     "dist/**"
   ],
@@ -21,13 +23,17 @@
     "build": "vite --config ../../vite.config.ts build",
     "dev": "vite --watch --config ../../vite.config.ts build",
     "test": "vitest --config ../../vite.config.ts --coverage --run",
+    "test:watch": "vitest --config ../../vite.config.ts --coverage --watch",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@ultify/eslint-config": "*",
     "@ultify/typescript-config": "*",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vite": "^5.3.1",
+    "vite-plugin-dts": "^3.9.1",
+    "vitest": "^1.6.0"
   },
   "publishConfig": {
     "access": "public"
