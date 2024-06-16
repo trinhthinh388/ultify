@@ -2370,13 +2370,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ultify/datastructure@npm:0.2.2, @ultify/datastructure@workspace:packages/datastructure":
+"@ultify/datastructure@npm:0.3.0, @ultify/datastructure@workspace:packages/datastructure":
   version: 0.0.0-use.local
   resolution: "@ultify/datastructure@workspace:packages/datastructure"
   dependencies:
     "@ultify/eslint-config": "npm:*"
     "@ultify/typescript-config": "npm:*"
     typescript: "npm:^5.4.5"
+    vite: "npm:^5.3.1"
+    vite-plugin-dts: "npm:^3.9.1"
+    vitest: "npm:^1.6.0"
   languageName: unknown
   linkType: soft
 
@@ -4538,7 +4541,7 @@ __metadata:
     "@hugeicons/react-pro": "npm:^0.3.2"
     "@types/react": "npm:^18.2.46"
     "@types/react-dom": "npm:^18.2.18"
-    "@ultify/datastructure": "npm:0.2.2"
+    "@ultify/datastructure": "npm:0.3.0"
     "@ultify/eslint-config": "npm:*"
     "@ultify/typescript-config": "npm:*"
     autoprefixer: "npm:^10.4.15"
@@ -13338,7 +13341,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite@npm:^5.0.0, vite@npm:^5.2.13":
+"vite@npm:^5.0.0, vite@npm:^5.2.13, vite@npm:^5.3.1":
   version: 5.3.1
   resolution: "vite@npm:5.3.1"
   dependencies:
