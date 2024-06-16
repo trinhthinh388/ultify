@@ -1,5 +1,11 @@
 # @ultify/datastructure
 
+## 0.3.0
+
+### Minor Changes
+
+- Added heap.
+
 ## 0.2.2
 
 ### Patch Changes
