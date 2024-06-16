@@ -25,6 +25,38 @@ describe('Heap', () => {
     });
   });
 
+  describe('fromArray', () => {
+    it('Should construct a valid heap', () => {
+      const heap = Heap.fromArray([
+        47, 92, 1, 20, 92, 50, 8, 51, 42, 7, 18, 54,
+      ]);
+      expect(heap.toArray()).toEqual([
+        92, 92, 54, 51, 47, 50, 8, 20, 42, 7, 18, 1,
+      ]);
+      expect(heap.size).toBe(12);
+      expect(heap.isValid()).toBe(true);
+      expect(heap.root).toBe(92);
+    });
+    it('Should construct a max heap by default', () => {
+      const heap = Heap.fromArray([1, 27, 45, 3]);
+      expect(heap.toArray()).toEqual([45, 27, 1, 3]);
+      expect(heap.isValid()).toBe(true);
+      expect(heap.root).toBe(45);
+    });
+    it('Should construct a min heap', () => {
+      const heap = Heap.fromArray([45, 27, 1, 3], (a, b) => b - a);
+      expect(heap.toArray()).toEqual([1, 3, 45, 27]);
+      expect(heap.isValid()).toBe(true);
+      expect(heap.root).toBe(1);
+    });
+    it('Should construct an empty heap', () => {
+      const heap = Heap.fromArray<number>(undefined, (a, b) => b - a);
+      expect(heap.toArray()).toEqual([]);
+      expect(heap.isValid()).toBe(true);
+      expect(heap.root).toBe(undefined);
+    });
+  });
+
   describe('Insert', () => {
     it('Should do nothing if args are not provided', () => {
       const heap = new Heap();

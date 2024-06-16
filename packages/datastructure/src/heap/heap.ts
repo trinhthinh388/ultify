@@ -39,6 +39,17 @@ export class Heap<T> {
   }
 
   /**
+   *
+   * @param values New elements to add to the Heap.
+   * @param compareFn Function used to determine the order of the elements. It is expected to return a negative value if the first argument is less than the second argument, zero if they're equal, and a positive value otherwise.
+   */
+  static fromArray<T>(
+    values: T[] = [],
+    compareFn: HeapCompareFn<T> = defaultCompareFn,
+  ) {
+    return new Heap(values, compareFn);
+  }
+  /**
    * Get left child's index of the provided index.
    * @param i index of the node
    */
