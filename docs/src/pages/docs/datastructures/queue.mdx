@@ -1,0 +1,73 @@
+---
+title: Queue
+---
+
+import { Callout } from 'nextra/components';
+import { Playground } from '@components/playground';
+import { files as constructorFiles } from '@snippets/datastructures/queue/constructor';
+import { files as fromArray } from '@snippets/datastructures/queue/fromArray';
+import { files as toArrayFiles } from '@snippets/datastructures/queue/toArray';
+import { files as enqueueFiles } from '@snippets/datastructures/queue/enqueue';
+import { files as dequeueFiles } from '@snippets/datastructures/queue/dequeue';
+import { files as peekFiles } from '@snippets/datastructures/queue/peek';
+import { files as isEmptyFiles } from '@snippets/datastructures/queue/isEmpty';
+import { files as clearFiles } from '@snippets/datastructures/queue/clear';
+import { files as sizeFiles } from '@snippets/datastructures/queue/size';
+
+# Queue
+
+A Queue Data Structure is a fundamental concept in computer science used for storing and managing data in a specific order.
+It follows the principle of **“First in, First out” (FIFO)**, where the first element added to the queue is the first one to be removed.
+Queues are commonly used in various algorithms and applications for their simplicity and efficiency in managing data flow.
+
+<Callout type="info">
+  Ultify's **queue** is a wrapper around Javascript array push/pop with a
+  standard queue interface.
+</Callout>
+
+## Operations
+
+- **Enqueue (Insert)**: Adds an element to the rear of the queue.
+- **Dequeue (Delete)**: Removes and returns the element from the front of the queue.
+- **Peek**: Returns the element at the front of the queue without removing it.
+- **Clear**: Empty the queue.
+- **IsEmpty**: Checks if the queue is empty.
+- **toArray**: Convert a queue to an array.
+
+## APIs
+
+### Constructor
+
+<Playground files={constructorFiles} />
+
+### fromArray `(static)`
+
+<Playground files={fromArray} />
+
+### toArray
+
+<Playground files={toArrayFiles} />
+
+### Enqueue
+
+<Playground files={enqueueFiles} />
+
+### Dequeue
+
+<Playground files={dequeueFiles} />
+
+### Peak
+
+<Playground files={peekFiles} />
+
+### Clear
+
+<Playground files={clearFiles} />
+
+### isEmpty
+
+<Playground files={isEmptyFiles} />
+
+### size `(readonly)`
+
+<Playground files={sizeFiles} />
