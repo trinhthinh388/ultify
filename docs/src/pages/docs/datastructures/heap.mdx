@@ -1,0 +1,104 @@
+import { StackIcon, QueueIcon } from '@components/icons';
+import { Card, Cards, Callout } from 'nextra/components';
+import { Playground } from '@components/playground';
+
+import { files as constructorFiles } from '@snippets/datastructures/heap/constructor';
+import { files as fromArray } from '@snippets/datastructures/heap/fromArray';
+import { files as toArrayFiles } from '@snippets/datastructures/heap/toArray';
+import { files as insertFiles } from '@snippets/datastructures/heap/insert';
+import { files as extractRootFiles } from '@snippets/datastructures/heap/extractRoot';
+import { files as getRootFiles } from '@snippets/datastructures/heap/getRoot';
+import { files as isValidFiles } from '@snippets/datastructures/heap/isValid';
+
+# Heap
+
+A **Heap** is a complete binary tree data structure that satisfies the heap property: for every node, the value of its children is less than or equal to its own value. Heaps are usually used to implement priority queues, where the smallest (or largest) element is always at the root of the tree.
+
+<Callout type="info">
+  Ultify's **heap** is a wrapper around Javascript array with a standard heap
+  interface.
+</Callout>
+
+## Types
+
+**@ultify/datastructure** also comes with some implementations of Heap datastructure.
+
+<Cards>
+  <Card
+    icon={<StackIcon />}
+    title="Max Heap"
+    href="/docs/datastructures/heap/max-heap"
+  />
+  <Card
+    icon={<QueueIcon />}
+    title="Min Heap"
+    href="/docs/datastructures/heap/min-heap"
+  />
+</Cards>
+
+## Operations
+
+- **insert**: Adds elements to the heap.
+- **extractRoot**: Removes and returns the root element from the heap.
+- `property` **root**: Returns the element of the heap without removing it.
+- **isValid**: Check ifs the heap is valid.
+- **IsEmpty**: Checks if the queue is empty.
+- **toArray**: Convert a heap to an array.
+- `static` **getLeftChildIndex**: Returns the left child's index of a given index.
+- `static` **getRightChildIndex**: Returns the right child's index of a given index.
+- `static` **getParentIndex**: Returns the parent's index of a given index.
+
+## APIs
+
+### Constructor
+
+By default, a **Heap** will be created as a Max Heap.
+To create another type of Heap, you can provide the `compareFn` to create the Heap accordingly.
+
+<Callout type="info">
+  Ultify's **heap** time complexity to create a Heap from an array is O(${n}$).
+</Callout>
+
+#### `compareFn`
+
+- **Type**: `<T>(a: T, b: T) => number`
+- **Description**: Function used to determine the order of the elements. It is expected to return a negative value if the first argument is less than the second argument, zero if they're equal, and a positive value otherwise.
+
+<Playground files={constructorFiles} />
+
+### fromArray `(static)`
+
+<Callout type="info">
+  Ultify's **heap** time complexity to create a Heap from an array is O(${n}$).
+</Callout>
+
+<Playground files={fromArray} />
+
+### toArray
+
+<Playground files={toArrayFiles} />
+
+### Insert
+
+<Callout type="info">
+  Ultify's **heap** time complexity to insert a single value to a Heap is
+  O($\log{n}$).
+</Callout>
+<Callout type="info">
+  Ultify's **heap** time complexity to insert multiple values to a Heap is O($
+  {n}$).
+</Callout>
+
+<Playground files={insertFiles} />
+
+### Extract Root
+
+<Playground files={extractRootFiles} />
+
+### Root
+
+<Playground files={getRootFiles} />
+
+### Is Valid
+
+<Playground files={isValidFiles} />
