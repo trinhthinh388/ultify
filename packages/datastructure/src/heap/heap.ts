@@ -80,7 +80,10 @@ export class Heap<T> {
     this.#heap.push(value);
 
     let parentIndex = Heap.getParentIndex(i);
-    while (i !== 0 && this.#heap[parentIndex] < this.#heap[i]) {
+    while (
+      i !== 0 &&
+      this.#compareFn(this.#heap[parentIndex], this.#heap[i]) < 0
+    ) {
       const temp = this.#heap[i];
       this.#heap[i] = this.#heap[parentIndex];
       this.#heap[parentIndex] = temp;
