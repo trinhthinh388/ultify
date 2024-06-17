@@ -87,4 +87,12 @@ describe('Heap', () => {
       expect(heap.toArray()).toEqual([81, 79, 42, 56, 66, 16, 26, 6, 8, 47]);
     });
   });
+
+  describe('Static', () => {
+    it('Get index', () => {
+      expect(MaxHeap.getLeftChildIndex(1)).toBe(3);
+      expect(MaxHeap.getRightChildIndex(1)).toBe(4);
+      expect(MaxHeap.getParentIndex(1)).toBe(0);
+    });
+  });
 });
