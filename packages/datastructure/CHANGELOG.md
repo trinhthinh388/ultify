@@ -1,5 +1,11 @@
 # @ultify/datastructure
 
+## 0.3.2
+
+### Patch Changes
+
+- Added MaxHeap
+
 ## 0.3.1
 
 ### Patch Changes
