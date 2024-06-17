@@ -49,6 +49,27 @@ export class MaxHeap<T> {
   ) {
     return new MaxHeap(values, compareFn);
   }
+  /**
+   * Get left child's index of the provided index.
+   * @param i index of the node
+   */
+  static getLeftChildIndex(i: number) {
+    return Heap.getLeftChildIndex(i);
+  }
+  /**
+   * Get right child's index of the provided index.
+   * @param i index of the node
+   */
+  static getRightChildIndex(i: number) {
+    return Heap.getRightChildIndex(i);
+  }
+  /**
+   * Get parent's index of the provided index.
+   * @param i index of the node
+   */
+  static getParentIndex(i: number) {
+    return Heap.getParentIndex(i);
+  }
 
   /**
    * Inserts new elements to the Heap.

@@ -1,5 +1,11 @@
 # @ultify/datastructure
 
+## 0.3.3
+
+### Patch Changes
+
+- added MaxHeap static methods
+
 ## 0.3.2
 
 ### Patch Changes

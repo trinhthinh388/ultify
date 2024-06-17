@@ -1,1 +1,85 @@
+import { StackIcon, QueueIcon } from '@components/icons';
+import { Callout } from 'nextra/components';
+import { Playground } from '@components/playground';
+
+import { files as constructorFiles } from '@snippets/datastructures/max-heap/constructor';
+import { files as fromArray } from '@snippets/datastructures/max-heap/fromArray';
+import { files as toArrayFiles } from '@snippets/datastructures/max-heap/toArray';
+import { files as insertFiles } from '@snippets/datastructures/max-heap/insert';
+import { files as extractMaxFiles } from '@snippets/datastructures/max-heap/extractMax';
+import { files as getMaxFiles } from '@snippets/datastructures/max-heap/getMax';
+import { files as isValidFiles } from '@snippets/datastructures/max-heap/isValid';
+
 # Max Heap
+
+A **MaxHeap** is a complete binary tree in which the value in each internal node is greater than or equal to the values in the children of that node.
+Mapping the elements of a heap into an array is trivial: if a node is stored an index k, then its left child is stored at index 2k + 1 and its right child at index 2k + 2.
+
+<Callout type="info">
+  Ultify's **MaxHeap** is a wrapper around Javascript array with a standard heap
+  interface.
+</Callout>
+
+## Operations
+
+- **insert**: Adds elements to the heap.
+- **extractMax**: Removes and returns the max element from the heap.
+- `property` **max**: Returns the max element of the heap without removing it.
+- **isValid**: Check ifs the heap is valid.
+- **IsEmpty**: Checks if the queue is empty.
+- **toArray**: Convert a heap to an array.
+- `static` **getLeftChildIndex**: Returns the left child's index of a given index.
+- `static` **getRightChildIndex**: Returns the right child's index of a given index.
+- `static` **getParentIndex**: Returns the parent's index of a given index.
+
+## APIs
+
+### Constructor
+
+<Callout type="info">
+  Ultify's **heap** time complexity to create a Heap from an array is O(${n}$).
+</Callout>
+
+#### `compareFn`
+
+- **Type**: `<T>(a: T, b: T) => number`
+- **Description**: Function used to determine the order of the elements. It is expected to return a negative value if the first argument is less than the second argument, zero if they're equal, and a positive value otherwise.
+
+<Playground files={constructorFiles} />
+
+### fromArray `(static)`
+
+<Callout type="info">
+  Ultify's **heap** time complexity to create a Heap from an array is O(${n}$).
+</Callout>
+
+<Playground files={fromArray} />
+
+### toArray
+
+<Playground files={toArrayFiles} />
+
+### Insert
+
+<Callout type="info">
+  Ultify's **heap** time complexity to insert a single value to a Heap is
+  O($\log{n}$).
+</Callout>
+<Callout type="info">
+  Ultify's **heap** time complexity to insert multiple values to a Heap is O($
+  {n}$).
+</Callout>
+
+<Playground files={insertFiles} />
+
+### Extract Max
+
+<Playground files={extractMaxFiles} />
+
+### Max
+
+<Playground files={getMaxFiles} />
+
+### Is Valid
+
+<Playground files={isValidFiles} />
