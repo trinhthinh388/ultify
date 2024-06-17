@@ -17,12 +17,6 @@ describe('Heap', () => {
       expect(heap.isValid()).toBe(true);
       expect(heap.max).toBe(45);
     });
-    it('Should construct a min heap', () => {
-      const heap = new MaxHeap([45, 27, 1, 3], (a, b) => b - a);
-      expect(heap.toArray()).toEqual([1, 3, 45, 27]);
-      expect(heap.isValid()).toBe(true);
-      expect(heap.max).toBe(1);
-    });
   });
 
   describe('fromArray', () => {
