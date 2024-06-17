@@ -6,7 +6,7 @@ foo.insert(1)
 foo.insert(2)
 foo.insert(67, -7)
 
-console.log(foo.extractMax())
+console.log(foo.extractMin())
 console.log(foo.toArray())
 `;
 

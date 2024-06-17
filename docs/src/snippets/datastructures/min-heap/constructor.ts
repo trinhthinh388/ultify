@@ -6,7 +6,7 @@ console.log("Empty MinHeap:", foo.toArray())
 
 // Create a heap from an array
 const bar = new MinHeap([3, 7, 5, 9])
-console.log("Max MinHeap:", bar.toArray())
+console.log("Min Heap:", bar.toArray())
 `;
 
 export const files = {
