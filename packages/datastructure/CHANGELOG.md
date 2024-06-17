@@ -1,5 +1,11 @@
 # @ultify/datastructure
 
+## 0.3.1
+
+### Patch Changes
+
+- added fromArray method to Heap
+
 ## 0.3.0
 
 ### Minor Changes
