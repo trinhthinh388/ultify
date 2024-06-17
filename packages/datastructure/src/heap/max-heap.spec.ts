@@ -73,7 +73,7 @@ describe('Heap', () => {
   describe('Extract Root', () => {
     it('Should return undefined if heap is empty', () => {
       const heap = new MaxHeap();
-      expect(heap.extractRoot()).toBe(undefined);
+      expect(heap.extractMax()).toBe(undefined);
     });
     it('Should remove the root node and maintain the valid heap.', () => {
       const heap = new MaxHeap([16, 81, 94, 79, 47, 42, 26, 56, 8, 66, 6]);
@@ -82,7 +82,7 @@ describe('Heap', () => {
       ]);
       expect(heap.isValid()).toBe(true);
 
-      const el = heap.extractRoot();
+      const el = heap.extractMax();
       expect(el).toBe(94);
       expect(heap.toArray()).toEqual([81, 79, 42, 56, 66, 16, 26, 6, 8, 47]);
     });

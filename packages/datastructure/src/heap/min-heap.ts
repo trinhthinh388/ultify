@@ -1,11 +1,11 @@
 import { Heap } from './heap';
 
-export type MaxHeapCompareFn<T> = (a: T, b: T) => number;
+export type MinHeapCompareFn<T> = (a: T, b: T) => number;
 
 function defaultCompareFn<T>(a: T, b: T) {
-  if (a > b) return 1;
+  if (b > a) return 1;
 
-  if (a < b) return -1;
+  if (b < a) return -1;
 
   return 0;
 }
@@ -16,17 +16,17 @@ function defaultCompareFn<T>(a: T, b: T) {
  *
  * @class
  */
-export class MaxHeap<T> {
+export class MinHeap<T> {
   #heap: Heap<T>;
 
   /**
    *
    * @param values New elements to add to the Heap.
-   * @param compareFn Function used to determine the order of the elements. It is expected to return a negative value if the first argument is less than the second argument, zero if they're equal, and a positive value otherwise.
+   * @param compareFn Function used to determine the order of the elements. It is expected to return a positive value if the first argument is less than the second argument, zero if they're equal, and a negative value otherwise.
    */
   constructor(
     values: T[] = [],
-    compareFn: MaxHeapCompareFn<T> = defaultCompareFn,
+    compareFn: MinHeapCompareFn<T> = defaultCompareFn,
   ) {
     this.#heap = new Heap(values, compareFn);
   }
@@ -34,20 +34,20 @@ export class MaxHeap<T> {
   get size() {
     return this.#heap.size;
   }
-  get max() {
+  get min() {
     return this.#heap.root;
   }
 
   /**
    *
    * @param values New elements to add to the Heap.
-   * @param compareFn Function used to determine the order of the elements. It is expected to return a negative value if the first argument is less than the second argument, zero if they're equal, and a positive value otherwise.
+   * @param compareFn Function used to determine the order of the elements. It is expected to return a positive value if the first argument is less than the second argument, zero if they're equal, and a negative value otherwise.
    */
   static fromArray<T>(
     values: T[] = [],
-    compareFn: MaxHeapCompareFn<T> = defaultCompareFn,
+    compareFn: MinHeapCompareFn<T> = defaultCompareFn,
   ) {
-    return new MaxHeap(values, compareFn);
+    return new MinHeap(values, compareFn);
   }
   /**
    * Get left child's index of the provided index.
@@ -92,7 +92,7 @@ export class MaxHeap<T> {
    * Remove the max element of a heap and returns it
    * Return `undefined` if heap is empty.
    */
-  extractMax() {
+  extractMin() {
     return this.#heap.extractRoot();
   }
 

@@ -1,5 +1,11 @@
 # @ultify/datastructure
 
+## 0.3.4
+
+### Patch Changes
+
+- Added MinHeap
+
 ## 0.3.3
 
 ### Patch Changes
