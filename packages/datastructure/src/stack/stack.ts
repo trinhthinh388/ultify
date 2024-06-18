@@ -60,7 +60,7 @@ export class Stack<T> {
    * Returns the top element without removing it
    */
   peek() {
-    return this.#array.at(-1)
+    return this.#array.at(-1);
   }
 
   /**
@@ -68,6 +68,7 @@ export class Stack<T> {
    */
   clear() {
     this.#array = [];
+    return this;
   }
 
   /**

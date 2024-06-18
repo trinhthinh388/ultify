@@ -135,9 +135,13 @@ export class Heap<T> {
    * @param values New elements to add to the Heap.
    */
   insert(...values: T[]) {
-    if (values.length === 0) return;
-    if (values.length === 1) return this.#insertNode(values[0]); // O(logN)
+    if (values.length === 0) return this;
+    if (values.length === 1) {
+      this.#insertNode(values[0]); // O(logN)
+      return this;
+    }
     this.#insertNodes(values);
+    return this;
   }
 
   /**
