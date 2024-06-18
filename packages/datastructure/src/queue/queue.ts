@@ -67,7 +67,7 @@ export class Queue<T> {
    * Returns the top element without removing it
    */
   peek() {
-    return this.#array[0]
+    return this.#array[0];
   }
 
   /**
@@ -75,5 +75,6 @@ export class Queue<T> {
    */
   clear() {
     this.#array = [];
+    return this;
   }
 }

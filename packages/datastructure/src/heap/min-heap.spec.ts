@@ -78,7 +78,6 @@ describe('Heap', () => {
 
       const el = heap.extractMin();
       expect(el).toBe(6);
-      console.log(heap.toArray());
       expect(heap.toArray()).toEqual([8, 16, 26, 56, 47, 42, 94, 81, 79, 66]);
       expect(heap.isValid()).toBe(true);
     });

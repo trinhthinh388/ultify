@@ -1,5 +1,11 @@
 # @ultify/datastructure
 
+## 0.4.0
+
+### Minor Changes
+
+- Added Trie
+
 ## 0.3.5
 
 ### Patch Changes

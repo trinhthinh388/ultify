@@ -1,5 +1,12 @@
 # docs
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies
+  - @ultify/datastructure@0.4.0
+
 ## 0.0.8
 
 ### Patch Changes
