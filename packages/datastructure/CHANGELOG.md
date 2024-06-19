@@ -1,5 +1,11 @@
 # @ultify/datastructure
 
+## 0.4.2
+
+### Patch Changes
+
+- used Linked List for Queue
+
 ## 0.4.1
 
 ### Patch Changes
