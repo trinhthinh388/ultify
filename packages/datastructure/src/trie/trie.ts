@@ -30,7 +30,6 @@ export class TrieNode {
  */
 export class Trie {
   #root: TrieNode;
-  #wordCount: number = 0;
 
   constructor(...words: string[]) {
     this.#root = new TrieNode();
@@ -91,7 +90,7 @@ export class Trie {
     return false;
   }
 
-  // @ts-expect-error
+  // @ts-expect-error idk why
   *#traverse(node: TrieNode = this.#root, str: string = '') {
     if (node.wordEnd) {
       yield str;
@@ -117,7 +116,6 @@ export class Trie {
 
     curr.wordEnd = true;
 
-    this.#wordCount++;
     return this;
   }
 
@@ -128,7 +126,7 @@ export class Trie {
 
   has(word: string) {
     let curr = this.#root;
-    for (let char of word) {
+    for (const char of word) {
       if (curr.children.get(char) === undefined) return false;
       curr = curr.children.get(char)!;
     }
@@ -138,7 +136,7 @@ export class Trie {
 
   startsWith(word: string) {
     let curr = this.#root;
-    for (let char of word) {
+    for (const char of word) {
       if (curr.children.get(char) === undefined) return false;
       curr = curr.children.get(char)!;
     }

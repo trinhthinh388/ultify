@@ -1,0 +1,76 @@
+# Trie
+
+import { Callout } from 'nextra/components';
+import { Playground } from '@components/playground';
+import { files as constructorFiles } from '@snippets/datastructures/trie/constructor';
+import { files as fromArray } from '@snippets/datastructures/trie/fromArray';
+import { files as toArrayFiles } from '@snippets/datastructures/trie/toArray';
+import { files as iterateFiles } from '@snippets/datastructures/trie/iteration-protocol';
+import { files as insertFiles } from '@snippets/datastructures/trie/insert';
+import { files as removeFiles } from '@snippets/datastructures/trie/remove';
+import { files as hasFiles } from '@snippets/datastructures/trie/has';
+import { files as startsWithFiles } from '@snippets/datastructures/trie/startsWith';
+import { files as clearFiles } from '@snippets/datastructures/trie/clear';
+import { files as nodeCountFiles } from '@snippets/datastructures/trie/nodeCount';
+import { files as wordCountFiles } from '@snippets/datastructures/trie/wordCount';
+
+The **Trie** data structure is a tree-like data structure used for storing a dynamic set of strings.
+It is commonly used for efficient retrieval and storage of keys in a large dataset.
+
+## Operations
+
+- **insert**: Adds a word to the Trie.
+- **remove**: Removes a word from the Trie.
+- **has**: Checks if a word exists in the Trie.
+- **startsWith**: Checks if a prefix exists in the Trie.
+- **clear**: Empty the trie.
+- **toArray**: Convert a trie to an array.
+
+## APIs
+
+### Constructor
+
+<Playground files={constructorFiles} />
+
+### fromArray `(static)`
+
+<Playground files={fromArray} />
+
+### toArray
+
+<Playground files={toArrayFiles} />
+
+<Callout type="info">
+  Ultify's **trie** also supports Iteration Protocol so you can iterate through
+  every word of a Trie.
+</Callout>
+
+<Playground files={iterateFiles} />
+
+### Insert
+
+<Playground files={insertFiles} />
+
+### Remove
+
+<Playground files={removeFiles} />
+
+### Has
+
+<Playground files={hasFiles} />
+
+### Starts With
+
+<Playground files={startsWithFiles} />
+
+### Clear
+
+<Playground files={clearFiles} />
+
+### Node Count `(readonly)`
+
+<Playground files={nodeCountFiles} />
+
+### Word Count `(readonly)`
+
+<Playground files={wordCountFiles} />
