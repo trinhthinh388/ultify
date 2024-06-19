@@ -1,5 +1,11 @@
 # @ultify/datastructure
 
+## 0.4.1
+
+### Patch Changes
+
+- fix lint
+
 ## 0.4.0
 
 ### Minor Changes
