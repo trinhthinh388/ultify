@@ -1,0 +1,12 @@
+{
+  "extends": "@ultify/typescript-config/lib.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "types": ["vitest/globals"],
+    "paths": {
+      "@_internals": ["./_internals/*"]
+    }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}
