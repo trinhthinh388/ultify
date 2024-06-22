@@ -1,49 +1,47 @@
-export type CurriedFnOrReturnValue<
-  Provided extends any[],
-  Fn extends VariadicFunction,
-> =
-  RemainingParameters<Provided, Parameters<Fn>> extends []
-    ? ReturnType<Fn>
-    : CurriedFn<Provided, Fn>;
+import type {
+  Gradual,
+  VariadicFunction,
+  Slice,
+  PartialParameter,
+} from '../types';
 
-export type CurriedFn<Provided extends any[], Fn extends VariadicFunction> = <
-  Args extends PartialTuple<RemainingParameters<Provided, Parameters<Fn>>>,
->(
-  ...args: Args
-) => CurriedFnOrReturnValue<[...Provided, ...Args], Fn>;
+type ArgsLength<L> = L extends number ? L : 0;
+
+type RemainParameters<
+  Fn extends VariadicFunction,
+  StartingArgs extends PartialParameter<Fn>,
+> = Slice<Parameters<Fn>, ArgsLength<StartingArgs['length']>>;
+
+/**
+ * Creates a type for an auto-curried function.
+ */
+export type Curry<
+  Fn extends VariadicFunction,
+  StartingArgs extends PartialParameter<Fn>,
+> = StartingArgs['length'] extends Parameters<Fn>['length']
+  ? ReturnType<Fn>
+  : <RemainArgs extends Gradual<RemainParameters<Fn, StartingArgs>>>(
+      ...args: RemainArgs
+    ) => Curry<
+      Fn,
+      // @ts-expect-error TODO: Fix this.
+      [...StartingArgs, ...RemainArgs]
+    >;
 
 /**
  * Create a auto-curried function from the function provided.
  * `curry` will keep returning new function with an expected number of required arguments
  * until all of them has been provided.
- *
- * CurriedFn<`Args`, `Fn`> is the return type of the `curry`.
- * Until all expected required arguments has been provided, then the CurriedFn<`Args`, `Fn`> will always be returned.
- * Eventually, the expected return type will be returned instead of the CurriedFn<`Args`, `Fn`>.
- *
- * @example
- * ```ts
- * const fn = (a: number, b: number, c: number) => a + b + c // (a : number, b: number, c: number) => number
- * const curried = curry(fn) // CurriedFn<[], (a : number, b: number, c: number) => number>
- *
- * const curried2 = curried(1) // CurriedFn<[1], (a : number, b: number, c: number) => number> a.k.a. (b: number, c: number) => number
- * //^ Since `Args` only has one member then you will need 2 more arguments to get the return type.
- *
- *  * const curried3 = curried(2) // CurriedFn<[1, 2], (a : number, b: number, c: number) => number> a.k.a. (c: number) => number
- * //^ Since `Args` only has one member then you will need 1 more arguments to get the return type.
- *
- * const result = curried3(3) // number
- *  * //^ Provides enough arguments then the `result` will have type `number`.
- * ```
  */
-export function curry<
+export default function curry<
   Fn extends VariadicFunction,
-  Args extends PartialParameters<Fn>,
->(fn: Fn, ...args: Args): CurriedFn<Args, Fn> {
+  StartingArgs extends PartialParameter<Fn>,
+>(fn: Fn, ...args: StartingArgs): Curry<Fn, StartingArgs> {
+  // @ts-expect-error TODO: Fix this.
   return function (..._args) {
     return ((rest) =>
       rest.length >= fn.length
         ? fn(...rest)
-        : curry(fn, ...(rest as PartialParameters<Fn>)))([...args, ..._args]);
+        : curry(fn, ...(rest as PartialParameter<Fn>)))([...args, ..._args]);
   };
 }

@@ -4,7 +4,8 @@
     "baseUrl": "src",
     "types": ["vitest/globals"],
     "paths": {
-      "@_internals": ["./_internals/*"]
+      "@_internals": ["./_internals/*"],
+      "@t": ["./types/*"]
     }
   },
   "include": ["src"],
