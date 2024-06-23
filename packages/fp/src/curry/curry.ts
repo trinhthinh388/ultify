@@ -19,7 +19,7 @@ export type Curry<
   Fn extends VariadicFunction,
   StartingArgs extends PartialParameter<Fn>,
 > = StartingArgs['length'] extends Parameters<Fn>['length']
-  ? ReturnType<Fn>
+  ? () => ReturnType<Fn>
   : <RemainArgs extends Gradual<RemainParameters<Fn, StartingArgs>>>(
       ...args: RemainArgs
     ) => Curry<
@@ -33,7 +33,7 @@ export type Curry<
  * `curry` will keep returning new function with an expected number of required arguments
  * until all of them has been provided.
  */
-export default function curry<
+export function curry<
   Fn extends VariadicFunction,
   StartingArgs extends PartialParameter<Fn>,
 >(fn: Fn, ...args: StartingArgs): Curry<Fn, StartingArgs> {
